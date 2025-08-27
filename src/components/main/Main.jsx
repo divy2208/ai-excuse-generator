@@ -19,7 +19,7 @@ const Main = () => {
 	return (
 		<div className="main">
 			<div className="nav">
-				<p>Gemini</p>
+				<p>Excuse Generator</p>
 				<img src={assets.user} alt="" />
 			</div>
 			<div className="main-container">
@@ -27,50 +27,50 @@ const Main = () => {
 					<>
 						<div className="greet">
 							<p>
-								<span>Hello , Dev </span>
+								<span>Hello!</span>
 							</p>
-							<p>How Can i Help You Today?</p>
+							<p>How Can I Help You Today?</p>
 						</div>
 						<div className="cards">
 							<div
 								className="card"
 								onClick={() =>
-									handleCardClick("Suggest Some Place To Visit In India.")
+									handleCardClick("Make an excuse for my boss for needing to take a sick day unexpectedly")
 								}
 							>
-								<p>Suggest Some Place To Visit In India.</p>
-								<img src={assets.compass_icon} alt="" />
+								<p>Make an excuse for my boss for needing to take a sick day unexpectedly</p>
+								<img src={assets.plus_icon} alt="" />
 							</div>
 							<div
 								className="card"
 								onClick={() =>
 									handleCardClick(
-										"Explain the process of photosynthesis in simple terms"
+										"Make an excuse to my teacher for not being prepared for the presentation"
 									)
 								}
 							>
-								<p>Explain the process of photosynthesis in simple terms </p>
-								<img src={assets.message_icon} alt="" />
+								<p>Make an excuse to my teacher for not being prepared for the presentation </p>
+								<img src={assets.plus_icon} alt="" />
 							</div>
 							<div
 								className="card"
 								onClick={() =>
-									handleCardClick("How do you create a responsive navbar using CSS and JavaScript?")
+									handleCardClick("Make an excuse for my friend for forgetting their birthday")
 								}
 							>
-								<p>How do you create a responsive navbar using CSS and JavaScript?</p>
-								<img src={assets.bulb_icon} alt="" />
+								<p>Make an excuse for my friend for forgetting their birthday</p>
+								<img src={assets.plus_icon} alt="" />
 							</div>
 							<div
 								className="card"
 								onClick={() => {
 									handleCardClick(
-										"What are some essential skills for becoming a front-end developer?"
+										"Make an excuse to my trainer for missing the gym all week"
 									);
 								}}
 							>
-								<p>What are some essential skills for becoming a front-end developer?</p>
-								<img src={assets.code_icon} alt="" />
+								<p>Make an excuse to my trainer for missing the gym all week</p>
+								<img src={assets.plus_icon} alt="" />
 							</div>
 						</div>
 					</>
@@ -106,8 +106,6 @@ const Main = () => {
 							placeholder="Enter the Prompt Here"
 						/>
 						<div>
-							<img src={assets.gallery_icon} alt="" />
-							<img src={assets.mic_icon} alt="" />
 							<img
 								src={assets.send_icon}
 								alt=""
@@ -119,8 +117,8 @@ const Main = () => {
 					</div>
 					<div className="bottom-info">
 						<p>
-							Gemini may display inaccurate info, including about people, so
-							double-check its responses. Your privacy & Gemini Apps
+							Made by Divyansh Kumawat. This is only for education purpose and not intended for
+							commercial use.
 						</p>
 					</div>
 				</div>

@@ -1,18 +1,16 @@
-
-
-// node --version # Should be >= 18
-// npm install @google/generative-ai
-
 import {
   GoogleGenerativeAI,
   HarmCategory,
   HarmBlockThreshold,
 } from "@google/generative-ai";
 
-const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = "Your Api Key ";
+// 1. UPDATED THE MODEL NAME
+const MODEL_NAME = "gemini-2.5-flash";
 
-async function runChat(prompt) {
+// IMPORTANT: Replace with your actual API Key
+const API_KEY = "AIzaSyDbm1ylts93tqw_5tipQko5prEiUDwuJWM"; 
+
+async function runChat(userInput) { // Renamed 'prompt' to 'userInput' for clarity
   const genAI = new GoogleGenerativeAI(API_KEY);
   const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
@@ -42,17 +40,21 @@ async function runChat(prompt) {
     },
   ];
 
+  // 2. CREATED YOUR CUSTOM PROMPT
+  // This wraps your detailed instructions around the input from the website's text box.
+  const fullPrompt = `Generate a short, creative, and believable excuse for the following situation: "${userInput}". Adjust the tone considering the relation to the person. Keep it reasonable but short and apologize at the end. I only want 1 excuse and nothing else in the answer.`;
+
+
   const chat = model.startChat({
     generationConfig,
     safetySettings,
-    history: [
-    ],
+    history: [],
   });
 
-  const result = await chat.sendMessage(prompt);
+  // The model now receives your custom, detailed prompt
+  const result = await chat.sendMessage(fullPrompt); 
   const response = result.response;
-  console.log(response.text());
   return response.text();
 }
 
- export default runChat;
+export default runChat;
